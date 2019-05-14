@@ -64,12 +64,12 @@ namespace Delegados
                     Nombre = "Adsi",
                     Codigo = 32,
                     Area = "Sistemas",
-                    Duracion = 24
+                    Duracion = 25
                 },
                 new Proyecto()
                 {
                     Nombre = "Gastronomia",
-                    Codigo = 29,
+                    Codigo = 31,
                     Area = "Postres",
                     Duracion = 10
                 }

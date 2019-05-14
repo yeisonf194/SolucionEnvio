@@ -93,22 +93,47 @@ namespace Delegados
             var maxNombre = (from p in proys
                              where (p.Duracion == maximo)
                              select p.Nombre).FirstOrDefault();
-            Console.WriteLine($"El maximo de todos los proyectos es: {maxNombre}");
+            //Console.WriteLine($"El maximo de todos los proyectos es: {maxNombre}");
 
 
 
 
             //7.Seleccionar el nombre y el area del proyecto con duracion mayor a seis, con firtsordefault
-            var mayor6 = proys.Where(x => x.Duracion > 6).ToList();
+            var mayor6 = proys.FirstOrDefault(x => x.Duracion > 6);
+            //if (mayor6 != null) {
+            //    Console.WriteLine($"Nombre del proyecto: {mayor6.Nombre}");
+            //    Console.WriteLine($"Codigo del proyecto: {mayor6.Codigo}");
+            //    Console.WriteLine($"Duracion del proyecto: {mayor6.Duracion}");
+            //}
+            //else {
+            //    Console.WriteLine("Objeto nulo");
+            //}
+
 
 
 
 
             //8.Verificar si existe un proyecto con una duracion mayor a 24 con any
+            var alguno = proys.Any(x => x.Duracion > 24);
+            //Console.WriteLine($"Al menos la duracion de un proyecto es mayor a 24 {alguno}");
+
+
+
+
+
             //9.Sumar las duraciones de los proyectos cuyo codigo sea superior a 20
+            var sumando = proys.Where(x => x.Codigo > 20).Sum(x => x.Duracion);
+            //Console.WriteLine($"Suma de la duracion de proyectos con codigo superior a 20: {sumando}");
+
+
+
+
+
+
+
             //10.Tomar los 2 primeros proyectos cuyo codigo sea superior a 30
-
-
+            var tomando = proys.Where(x => x.Codigo > 30).Take(2).ToList();
+            //project.ImprimirProyectos(tomando);
         }
     }
 }
